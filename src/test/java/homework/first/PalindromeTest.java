@@ -29,6 +29,6 @@ public class PalindromeTest {
 
     @Test
     public void stringContainingOnlyWhiteCharactersIsNotPalindrome() {
-        Assert.assertFalse(Palindrome.checkIfPalindrome("            "));
+        Assert.assertFalse(Palindrome.checkIfPalindrome("             "));
     }
 }
