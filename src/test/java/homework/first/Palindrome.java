@@ -4,32 +4,11 @@ package homework.first;
  * Created by matgalkowski on 27.11.2016.
  */
 public class Palindrome {
-
-
     public static boolean checkIfPalindrome(String word) {
-        word = word.trim();
+        word = word.trim().toLowerCase();
         if(word.isEmpty())
             return false;
-
-        StringBuffer temp = new StringBuffer(word);
-        char c;
-        for(int i=0;i<temp.length();i++) {
-            c = temp.charAt(i);
-            if(!Character.isLetter(c))
-                return false;
-            else {
-                if(!Character.isLowerCase(c)) {
-                    c = Character.toLowerCase(c);
-                    temp.setCharAt(i, c);
-                }
-            }
-        }
-        word = temp.toString();
-        if(temp.reverse().toString().equals(word))
-            return true;
-        else
-            return false;
-
-
+        String reversedWord = new StringBuffer(word).reverse().toString();
+        return reversedWord.equals(word);
     }
 }
